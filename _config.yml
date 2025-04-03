@@ -1,7 +1,7 @@
 title: Photo Organizer
 description: Media organization tool
 url: "https://mcvanhassel.github.io"
-baseurl: "photo-organizer.app"
+baseurl: "/photo-organizer.app"
 
 # Build settings
 markdown: kramdown
@@ -16,3 +16,7 @@ exclude:
   - package.json
   - package-lock.json
   - tailwind.config.js
+
+# Keep files from being cleaned by Jekyll
+keep_files:
+  - assets/css/style.css

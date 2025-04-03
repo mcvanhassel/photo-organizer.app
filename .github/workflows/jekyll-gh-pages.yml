@@ -37,9 +37,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build TailwindCSS
-        run: npm run build
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -48,6 +45,16 @@ jobs:
         with:
           source: ./
           destination: ./_site
+
+      - name: Build TailwindCSS
+        run: npm run build
+
+      - name: Debug CSS
+        run: |
+          echo "CSS file contents:"
+          cat ./_site/assets/css/style.css
+          echo "Directory structure:"
+          ls -la ./_site/assets/css/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
