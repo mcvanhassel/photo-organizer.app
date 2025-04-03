@@ -46,8 +46,12 @@ jobs:
           source: ./
           destination: ./_site
 
-      - name: Create CSS directory
-        run: mkdir -p ./_site/assets/css
+      - name: Set permissions and create CSS directory
+        run: |
+          sudo chown -R $USER:$USER ./_site
+          mkdir -p ./_site/assets/css
+          touch ./_site/assets/css/style.css
+          chmod 666 ./_site/assets/css/style.css
 
       - name: Build TailwindCSS
         run: npm run build
@@ -58,6 +62,8 @@ jobs:
           cat _site/assets/css/style.css
           echo "Directory structure:"
           ls -R ./_site/assets/
+          echo "File permissions:"
+          ls -la ./_site/assets/css/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
