@@ -8,7 +8,7 @@ markdown: kramdown
 # Include directories and files
 include:
   - assets
-  - _site/assets
+  - _site
   - "*.css"
 
 exclude:
@@ -18,6 +18,9 @@ exclude:
   - tailwind.config.js
   - README.md
   - .gitignore
+
+keep_files:
+  - assets/css/style.css
 
 sass:
   style: compressed

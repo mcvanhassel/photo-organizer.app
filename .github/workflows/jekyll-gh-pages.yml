@@ -37,7 +37,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Create output directory
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Create CSS directory
         run: mkdir -p ./_site/assets/css
 
       - name: Build TailwindCSS
@@ -47,15 +56,8 @@ jobs:
         run: |
           echo "Contents of _site/assets/css/style.css:"
           cat _site/assets/css/style.css
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
+          echo "Directory structure:"
+          ls -R ./_site/assets/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
