@@ -1,0 +1,24 @@
+{
+  "name": "media-organizer-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./assets/css/main.css -o ./_site/assets/css/style.css --minify",
+    "watch": "tailwindcss -i ./assets/css/main.css -o ./_site/assets/css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcvanhassel/media-organizer-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcvanhassel/media-organizer-site/issues"
+  },
+  "homepage": "https://github.com/mcvanhassel/media-organizer-site#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
