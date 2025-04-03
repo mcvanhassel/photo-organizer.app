@@ -1,17 +1,49 @@
+# Site Settings
 title: Photo Organizer
-description: Media organization tool
+description: Intelligent desktop app for organizing photos and videos. Automatic sorting, duplicate detection, and privacy-focused local processing.
+author: Maurits van Hassel
+
+# URL Settings
 baseurl: "https://mcvanhassel.github.io/photo-organizer.app"
 
-# Build settings
+# Build Settings
 markdown: kramdown
+permalink: pretty
+
+# PWA/Manifest Settings
+pwa:
+  name: "Photo Organizer"
+  short_name: "Photo Organizer"
+  theme_color: "#2563eb" # blue-600
+  background_color: "#ffffff"
+  display: "standalone"
+  start_url: "/"
+  icons:
+    - src: "/assets/favicon/favicon195.png"
+      sizes: "195x195"
+      type: "image/png"
+    - src: "/assets/favicon/app.ico"
+      sizes: "256x256"
+      type: "image/ico"
+
+# SEO Settings
+lang: en
+keywords: photo organizer, photo management, image organization, photo sorting, picture organizer, media management, photo library, offline photo organizer, privacy-focused
+
+# Social Media
+social:
+  github: "mcvanhassel/photo-organizer.app"
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
 
 # Include directories and files
 include:
   - assets
   - _site/assets
-
-exclude:
-  - node_modules
-  - package.json
-  - package-lock.json
-  - tailwind.config.js

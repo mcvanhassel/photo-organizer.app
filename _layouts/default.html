@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page.title }} - {{ site.title }}</title>
 
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="{% if page.description %}{{ page.description }}{% else %}Photo Organizer - Intelligent desktop app for organizing photos and videos. Automatic sorting, duplicate detection, and privacy-focused local processing.{% endif %}"
+    />
+    <meta
+      name="keywords"
+      content="photo organizer, photo management, image organization, photo sorting, picture organizer, media management, photo library, offline photo organizer, privacy-focused"
+    />
+    <meta name="author" content="Maurits van Hassel" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="{{ page.title }} - {{ site.title }}" />
+    <meta
+      property="og:description"
+      content="{% if page.description %}{{ page.description }}{% else %}Photo Organizer - Intelligent desktop app for organizing photos and videos. Automatic sorting, duplicate detection, and privacy-focused local processing.{% endif %}"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="{{ site.baseurl }}/assets/images/app-screenshot.png"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
     <!-- Favicon -->
     <link
       rel="icon"
@@ -29,7 +55,7 @@
           <a href="{{ site.baseurl }}/" class="flex items-center">
             <img
               src="{{ site.baseurl }}/assets/favicon/app.ico"
-              alt="Photo Organizer Logo"
+              alt="Photo Organizer - Intelligent Photo Management App Logo"
               class="w-12 h-12"
             />
             <span class="ml-2 text-xl font-semibold text-gray-900"
