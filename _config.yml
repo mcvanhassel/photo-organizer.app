@@ -8,7 +8,6 @@ baseurl: "https://mcvanhassel.github.io/photo-organizer.app"
 
 # Build Settings
 markdown: kramdown
-permalink: pretty
 
 # PWA/Manifest Settings
 pwa:
