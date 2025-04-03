@@ -9,9 +9,15 @@ markdown: kramdown
 include:
   - assets
   - _site/assets
+  - "*.css"
 
 exclude:
   - node_modules
   - package.json
   - package-lock.json
   - tailwind.config.js
+  - README.md
+  - .gitignore
+
+sass:
+  style: compressed
