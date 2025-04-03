@@ -1,6 +1,7 @@
 title: Photo Organizer
 description: Media organization tool
-baseurl: "https://mcvanhassel.github.io/photo-organizer.app"
+url: "https://mcvanhassel.github.io"
+baseurl: "photo-organizer.app"
 
 # Build settings
 markdown: kramdown
@@ -8,19 +9,10 @@ markdown: kramdown
 # Include directories and files
 include:
   - assets
-  - _site
-  - "*.css"
+  - _site/assets
 
 exclude:
   - node_modules
   - package.json
   - package-lock.json
   - tailwind.config.js
-  - README.md
-  - .gitignore
-
-keep_files:
-  - assets/css/style.css
-
-sass:
-  style: compressed
