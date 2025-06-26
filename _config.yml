@@ -1,13 +1,18 @@
 # Site Settings
 title: Photo Organizer
-description: Intelligent desktop app for organizing photos and videos. Automatic sorting, duplicate detection, and privacy-focused local processing.
+description: Intelligent desktop app for organizing photos and videos. Automatic sorting, duplicate detection, and privacy-focused local processing for Windows and macOS.
 author: Maurits van Hassel
 
 # URL Settings
-baseurl: "https://mcvanhassel.github.io/photo-organizer.app"
+url: "https://mcvanhassel.github.io"
+baseurl: "/photo-organizer.app"
 
 # Build Settings
 markdown: kramdown
+
+# SEO Plugins (if you want to add jekyll-seo-tag in the future)
+plugins:
+  - jekyll-sitemap
 
 # PWA/Manifest Settings
 pwa:
@@ -27,11 +32,19 @@ pwa:
 
 # SEO Settings
 lang: en
-keywords: photo organizer, photo management, image organization, photo sorting, picture organizer, media management, photo library, offline photo organizer, privacy-focused
+keywords: photo organizer, photo management, image organization, photo sorting, picture organizer, media management, photo library, offline photo organizer, privacy-focused, desktop app, Windows, macOS, duplicate detection, EXIF data, automatic sorting
 
-# Social Media
+# Social Media and Business Info
 social:
   github: "mcvanhassel/photo-organizer.app"
+
+# Business/App Information for Rich Snippets
+app:
+  name: "Photo Organizer"
+  price: "19.99"
+  currency: "EUR"
+  platforms: ["macOS", "Windows"]
+  category: "Productivity"
 
 # Exclude files from processing
 exclude:
@@ -41,6 +54,9 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
 
 # Include directories and files
 include:

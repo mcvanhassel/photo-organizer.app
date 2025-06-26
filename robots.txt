@@ -2,7 +2,16 @@
 
 User-agent: *
 Allow: /
-Disallow: /assets/
+Disallow: /assets/css/
+Disallow: /node_modules/
+Disallow: /_site/
+
+# Specific crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 # Sitemap
-Sitemap: {{ site.url }}/sitemap.xml
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml

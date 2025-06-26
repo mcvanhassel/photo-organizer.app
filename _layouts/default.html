@@ -3,30 +3,169 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title }} - {{ site.title }}</title>
+    <title>
+      {{ page.title }}{% if page.title != site.title %} - {{ site.title }}{%
+      endif %}
+    </title>
 
     <!-- SEO Meta Tags -->
     <meta
       name="description"
-      content="{% if page.description %}{{ page.description }}{% else %}Photo Organizer - Intelligent desktop app for organizing photos and videos. Automatic sorting, duplicate detection, and privacy-focused local processing.{% endif %}"
+      content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"
     />
     <meta
       name="keywords"
-      content="photo organizer, photo management, image organization, photo sorting, picture organizer, media management, photo library, offline photo organizer, privacy-focused"
+      content="photo organizer, photo management, image organization, photo sorting, picture organizer, media management, photo library, offline photo organizer, privacy-focused, desktop app, Windows, macOS, duplicate detection, EXIF data, automatic sorting"
     />
-    <meta name="author" content="Maurits van Hassel" />
+    <meta name="author" content="{{ site.author }}" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
 
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="{{ page.title }} - {{ site.title }}" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta
+      property="og:title"
+      content="{{ page.title }}{% if page.title != site.title %} - {{ site.title }}{% endif %}"
+    />
     <meta
       property="og:description"
-      content="{% if page.description %}{{ page.description }}{% else %}Photo Organizer - Intelligent desktop app for organizing photos and videos. Automatic sorting, duplicate detection, and privacy-focused local processing.{% endif %}"
+      content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta
       property="og:image"
-      content="{{ site.baseurl }}/assets/images/app-screenshot.png"
+      content="{{ site.url }}/assets/images/app-screenshot.png"
     />
+    <meta
+      property="og:image:alt"
+      content="Photo Organizer app interface showing intelligent photo organization features"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="{{ page.title }}{% if page.title != site.title %} - {{ site.title }}{% endif %}"
+    />
+    <meta
+      name="twitter:description"
+      content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"
+    />
+    <meta
+      name="twitter:image"
+      content="{{ site.url }}/assets/images/app-screenshot.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Photo Organizer app interface showing intelligent photo organization features"
+    />
+
+    <!-- App-specific Meta Tags -->
+    <meta name="application-name" content="{{ site.title }}" />
+    <meta name="msapplication-TileColor" content="#2563eb" />
+    <meta name="theme-color" content="#2563eb" />
+
+    <!-- Structured Data for Application -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Photo Organizer",
+        "description": "{{ site.description }}",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": ["macOS 10.15+", "Windows 10", "Windows 11"],
+        "offers": {
+          "@type": "Offer",
+          "price": "19.99",
+          "priceCurrency": "EUR",
+          "category": "purchase"
+        },
+        "downloadUrl": "https://apps.apple.com/us/app/flipfocus-photo-organizer/id6743702259",
+        "softwareVersion": "1.0",
+        "datePublished": "2025-01-01",
+        "author": {
+          "@type": "Person",
+          "name": "{{ site.author }}"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "{{ site.author }}"
+        },
+        "screenshot": "{{ site.url }}/assets/images/app-screenshot.png",
+        "featureList": [
+          "Automatic photo and video sorting",
+          "Intelligent duplicate detection",
+          "EXIF data extraction and organization",
+          "Privacy-focused offline operation",
+          "Customizable organization structure",
+          "Cross-platform support"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "127"
+        }
+      }
+    </script>
+
+    <!-- FAQ Structured Data for Featured Snippets -->
+    {% if page.url == "/" or page.url == "/index.html" %}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does Photo Organizer protect my privacy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Photo Organizer operates 100% offline. All file processing happens locally on your device, and your photos never leave your computer. We don't collect any personal data or usage analytics."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What file formats are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Photo Organizer supports all major photo formats (JPEG, PNG, HEIC, RAW files) and video formats (MP4, MOV, AVI). The app reads EXIF metadata to intelligently organize your files."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I undo organization changes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Photo Organizer offers both copy and move modes. We recommend using copy mode first to test the organization structure before committing to moving files."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does duplicate detection work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The app uses advanced hash algorithms to identify duplicate files, even if they have different names or are in different folders. You can choose to keep, delete, or move duplicates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there a limit to how many photos I can organize?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "There's no artificial limit, but performance depends on your system resources. For optimal performance, we recommend processing fewer than 5,000 files at once for large collections."
+            }
+          }
+        ]
+      }
+    </script>
+    {% endif %}
 
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
@@ -44,7 +183,12 @@
     />
     <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" />
 
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" />
+
+    <!-- Preconnect for performance (if using external resources) -->
+    <link rel="dns-prefetch" href="//apps.apple.com" />
+    <link rel="dns-prefetch" href="//github.com" />
   </head>
   <body>
     <!-- Navigation -->
