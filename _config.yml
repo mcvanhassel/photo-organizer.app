@@ -4,8 +4,8 @@ description: Intelligent desktop app for organizing photos and videos. Automatic
 author: Maurits van Hassel
 
 # URL Settings
-url: "https://mcvanhassel.github.io"
-baseurl: "/photo-organizer.app"
+url: "https://organizer.flipfocus.nl"
+baseurl: ""
 
 # Build Settings
 markdown: kramdown

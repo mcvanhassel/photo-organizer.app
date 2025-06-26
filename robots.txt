@@ -14,4 +14,4 @@ User-agent: Bingbot
 Allow: /
 
 # Sitemap
-Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml
+Sitemap: {{ site.url }}/sitemap.xml

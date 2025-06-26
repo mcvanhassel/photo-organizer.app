@@ -2,7 +2,7 @@
 
 This is the official website for **Photo Organizer**, an intelligent desktop application for organizing photos and videos with automatic sorting, duplicate detection, and privacy-focused local processing.
 
-## 🌐 Website: [photo-organizer.app](https://mcvanhassel.github.io/photo-organizer.app/)
+## 🌐 Website: [organizer.flipfocus.nl](https://organizer.flipfocus.nl/)
 
 ## 🚀 SEO Optimizations Implemented
 

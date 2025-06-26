@@ -2,7 +2,7 @@
   "name": "Photo Organizer - Intelligent Photo Management",
   "short_name": "Photo Organizer",
   "description": "Intelligent desktop app for organizing photos and videos with automatic sorting, duplicate detection, and privacy-focused local processing.",
-  "start_url": "/photo-organizer.app/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2563eb",
@@ -11,17 +11,17 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/photo-organizer.app/assets/favicon/favicon32.png",
+      "src": "/assets/favicon/favicon32.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "/photo-organizer.app/assets/favicon/favicon195.png",
+      "src": "/assets/favicon/favicon195.png",
       "sizes": "195x195",
       "type": "image/png"
     },
     {
-      "src": "/photo-organizer.app/assets/favicon/app.ico",
+      "src": "/assets/favicon/app.ico",
       "sizes": "256x256",
       "type": "image/ico"
     }
