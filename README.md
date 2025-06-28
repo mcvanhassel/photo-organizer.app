@@ -44,7 +44,7 @@ This is the official website for **Photo Organizer**, an intelligent desktop app
 ## 📱 Download the App
 
 - [Download for macOS](https://apps.apple.com/us/app/flipfocus-photo-organizer/id6743702259) - App Store
-- Download for Windows - Coming Soon
+- [Download for Windows](https://apps.microsoft.com/detail/9N0T4WCLMJ63) - Microsoft Store
 
 ## 🎯 Key Features Highlighted
 
