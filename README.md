@@ -124,3 +124,5 @@ bundle exec jekyll build
 ## 📄 License
 
 © 2025 Maurits van Hassel. All rights reserved.
+
+Developed by [Mcvanhassel Web Development](https://mcvanhassel.com).
