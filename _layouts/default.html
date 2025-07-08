@@ -200,7 +200,7 @@
     <link rel="dns-prefetch" href="//apps.microsoft.com" />
     <link rel="dns-prefetch" href="//github.com" />
 
-    <!-- Google Analytics (conditionally loaded) -->
+    <!-- Google Analytics & Google Ads (conditionally loaded) -->
     <script>
       // GDPR Consent Management
       window.cookieConsent = {
@@ -217,7 +217,7 @@
 
         loadGoogleAnalytics: function () {
           if (this.hasConsent() && !window.gtag) {
-            // Load Google Analytics
+            // Load Google Analytics & Google Ads
             var script = document.createElement("script");
             script.async = true;
             script.src =
@@ -231,10 +231,15 @@
               }
               window.gtag = gtag;
               gtag("js", new Date());
+
+              // Google Analytics
               gtag("config", "G-4E22ELCWM8", {
                 anonymize_ip: true,
                 cookie_flags: "secure;samesite=strict",
               });
+
+              // Google Ads (Replace with your actual conversion ID from Google Ads)
+              // gtag("config", "AW-123456789");
             };
           }
         },
@@ -244,6 +249,111 @@
       if (window.cookieConsent.hasConsent()) {
         window.cookieConsent.loadGoogleAnalytics();
       }
+    </script>
+
+    <!-- Google Ads Conversion Tracking -->
+    <script>
+      // Conversion tracking function
+      // function trackConversion(conversionLabel, conversionValue) {
+      //   if (typeof gtag !== "undefined" && window.cookieConsent.hasConsent()) {
+      //     gtag("event", "conversion", {
+      //       send_to: "AW-123456789/" + conversionLabel,
+      //       value: conversionValue,
+      //       currency: "EUR",
+      //     });
+      //   }
+      // }
+
+      // Wait for DOM to be ready
+      document.addEventListener("DOMContentLoaded", function () {
+        // Track App Store downloads (Primary Conversion)
+        const appStoreLinks = document.querySelectorAll(
+          'a[href*="apps.apple.com"], a[href*="apps.microsoft.com"]'
+        );
+        appStoreLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            // Replace 'AbCdEfGhIjKlMnOpQrStUvWxYz' with your actual App Store Download conversion label
+            gtag("event", "conversion_event_purchase", {
+              // <event_parameters>
+            });
+
+            // Send to Google Analytics as well
+            if (
+              typeof gtag !== "undefined" &&
+              window.cookieConsent.hasConsent()
+            ) {
+              gtag("event", "click", {
+                event_category: "App Store",
+                event_label: link.href.includes("apple.com")
+                  ? "Mac App Store"
+                  : "Microsoft Store",
+                value: 19.99,
+              });
+            }
+          });
+        });
+
+        // Track contact form submissions (Secondary Conversion)
+        const contactForm = document.querySelector('form[action*="formspree"]');
+        if (contactForm) {
+          contactForm.addEventListener("submit", function () {
+            // Replace 'ContactFormLabel123' with your actual Contact Form conversion label
+            gtag("event", "conversion_event_contact", {
+              // <event_parameters>
+            });
+
+            // Send to Google Analytics as well
+            if (
+              typeof gtag !== "undefined" &&
+              window.cookieConsent.hasConsent()
+            ) {
+              gtag("event", "submit", {
+                event_category: "Contact",
+                event_label: "Contact Form Submission",
+              });
+            }
+          });
+        }
+
+        // Track engagement events (for optimization)
+        let scrolled50 = false;
+        let timeOnPage2Min = false;
+
+        // Track 50% scroll depth
+        window.addEventListener("scroll", function () {
+          if (
+            !scrolled50 &&
+            window.scrollY >= document.body.scrollHeight * 0.5
+          ) {
+            scrolled50 = true;
+            if (
+              typeof gtag !== "undefined" &&
+              window.cookieConsent.hasConsent()
+            ) {
+              gtag("event", "scroll", {
+                event_category: "Engagement",
+                event_label: "50% Scroll Depth",
+              });
+            }
+          }
+        });
+
+        // Track 2 minutes on page
+        setTimeout(function () {
+          if (!timeOnPage2Min) {
+            timeOnPage2Min = true;
+            if (
+              typeof gtag !== "undefined" &&
+              window.cookieConsent.hasConsent()
+            ) {
+              gtag("event", "timing_complete", {
+                event_category: "Engagement",
+                event_label: "2 Minutes on Page",
+              });
+            }
+          }
+        }, 120000); // 2 minutes
+      });
     </script>
 
     <!-- Cookie Banner Overlay Styles -->
