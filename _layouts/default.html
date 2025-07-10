@@ -200,7 +200,7 @@
     <link rel="dns-prefetch" href="//apps.microsoft.com" />
     <link rel="dns-prefetch" href="//github.com" />
 
-    <!-- Google Analytics & Google Ads (conditionally loaded) -->
+    <!-- Google Analytics (conditionally loaded) -->
     <script>
       // GDPR Consent Management
       window.cookieConsent = {
@@ -217,7 +217,7 @@
 
         loadGoogleAnalytics: function () {
           if (this.hasConsent() && !window.gtag) {
-            // Load Google Analytics & Google Ads
+            // Load Google Analytics
             var script = document.createElement("script");
             script.async = true;
             script.src =
@@ -232,14 +232,17 @@
               window.gtag = gtag;
               gtag("js", new Date());
 
-              // Google Analytics
+              // Google Analytics Enhanced Configuration
               gtag("config", "G-4E22ELCWM8", {
                 anonymize_ip: true,
                 cookie_flags: "secure;samesite=strict",
+                send_page_view: true,
+                // Enhanced eCommerce for app downloads
+                custom_map: {
+                  custom_parameter_1: "app_platform",
+                  custom_parameter_2: "download_source",
+                },
               });
-
-              // Google Ads (Replace with your actual conversion ID from Google Ads)
-              // gtag("config", "AW-123456789");
             };
           }
         },
@@ -251,108 +254,182 @@
       }
     </script>
 
-    <!-- Google Ads Conversion Tracking -->
+    <!-- Google Analytics Enhanced Event Tracking -->
     <script>
-      // Conversion tracking function
-      // function trackConversion(conversionLabel, conversionValue) {
-      //   if (typeof gtag !== "undefined" && window.cookieConsent.hasConsent()) {
-      //     gtag("event", "conversion", {
-      //       send_to: "AW-123456789/" + conversionLabel,
-      //       value: conversionValue,
-      //       currency: "EUR",
-      //     });
-      //   }
-      // }
+      // Enhanced GA4 Event Tracking
+      function trackEvent(eventName, parameters) {
+        if (typeof gtag !== "undefined" && window.cookieConsent.hasConsent()) {
+          gtag("event", eventName, parameters);
+        }
+      }
 
       // Wait for DOM to be ready
       document.addEventListener("DOMContentLoaded", function () {
-        // Track App Store downloads (Primary Conversion)
+        // Track App Store downloads (Primary Goal)
         const appStoreLinks = document.querySelectorAll(
           'a[href*="apps.apple.com"], a[href*="apps.microsoft.com"]'
         );
         appStoreLinks.forEach(function (link) {
           link.addEventListener("click", function () {
-            // Replace 'AbCdEfGhIjKlMnOpQrStUvWxYz' with your actual App Store Download conversion label
-            gtag("event", "conversion_event_purchase", {
-              // <event_parameters>
+            const platform = link.href.includes("apple.com")
+              ? "mac"
+              : "windows";
+            const store = link.href.includes("apple.com")
+              ? "Mac App Store"
+              : "Microsoft Store";
+
+            // Primary conversion event for GA4
+            trackEvent("purchase_intent", {
+              event_category: "App Download",
+              event_label: store,
+              value: 19.99,
+              currency: "EUR",
+              platform: platform,
+              source: "website",
             });
 
-            // Send to Google Analytics as well
-            if (
-              typeof gtag !== "undefined" &&
-              window.cookieConsent.hasConsent()
-            ) {
-              gtag("event", "click", {
-                event_category: "App Store",
-                event_label: link.href.includes("apple.com")
-                  ? "Mac App Store"
-                  : "Microsoft Store",
-                value: 19.99,
-              });
-            }
+            // Additional specific tracking
+            trackEvent("app_store_click", {
+              platform: platform,
+              store: store,
+              price: 19.99,
+              currency: "EUR",
+            });
           });
         });
 
-        // Track contact form submissions (Secondary Conversion)
+        // Track contact form submissions
         const contactForm = document.querySelector('form[action*="formspree"]');
         if (contactForm) {
           contactForm.addEventListener("submit", function () {
-            // Replace 'ContactFormLabel123' with your actual Contact Form conversion label
-            gtag("event", "conversion_event_contact", {
-              // <event_parameters>
+            trackEvent("generate_lead", {
+              event_category: "Contact",
+              event_label: "Contact Form Submission",
+              lead_type: "contact_form",
             });
-
-            // Send to Google Analytics as well
-            if (
-              typeof gtag !== "undefined" &&
-              window.cookieConsent.hasConsent()
-            ) {
-              gtag("event", "submit", {
-                event_category: "Contact",
-                event_label: "Contact Form Submission",
-              });
-            }
           });
         }
 
-        // Track engagement events (for optimization)
-        let scrolled50 = false;
-        let timeOnPage2Min = false;
+        // Track feature interest (pricing button clicks)
+        const pricingButtons = document.querySelectorAll('a[href*="#pricing"]');
+        pricingButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            trackEvent("view_pricing", {
+              event_category: "Interest",
+              event_label: "Pricing Section View",
+            });
+          });
+        });
 
-        // Track 50% scroll depth
+        // Track demo/screenshot interest
+        const screenshots = document.querySelectorAll(
+          ".screenshot-gallery img"
+        );
+        screenshots.forEach(function (img, index) {
+          img.addEventListener("click", function () {
+            trackEvent("view_demo", {
+              event_category: "Engagement",
+              event_label: "Screenshot View",
+              screenshot_number: index + 1,
+            });
+          });
+        });
+
+        // Enhanced engagement tracking
+        let scrolled25 = false;
+        let scrolled50 = false;
+        let scrolled75 = false;
+        let timeOnPage30s = false;
+        let timeOnPage2m = false;
+        let timeOnPage5m = false;
+
+        // Multi-level scroll tracking
         window.addEventListener("scroll", function () {
-          if (
-            !scrolled50 &&
-            window.scrollY >= document.body.scrollHeight * 0.5
-          ) {
+          const scrollPercent =
+            (window.scrollY /
+              (document.body.scrollHeight - window.innerHeight)) *
+            100;
+
+          if (!scrolled25 && scrollPercent >= 25) {
+            scrolled25 = true;
+            trackEvent("scroll", {
+              event_category: "Engagement",
+              event_label: "25% Scroll Depth",
+            });
+          }
+
+          if (!scrolled50 && scrollPercent >= 50) {
             scrolled50 = true;
-            if (
-              typeof gtag !== "undefined" &&
-              window.cookieConsent.hasConsent()
-            ) {
-              gtag("event", "scroll", {
-                event_category: "Engagement",
-                event_label: "50% Scroll Depth",
-              });
-            }
+            trackEvent("scroll", {
+              event_category: "Engagement",
+              event_label: "50% Scroll Depth",
+            });
+          }
+
+          if (!scrolled75 && scrollPercent >= 75) {
+            scrolled75 = true;
+            trackEvent("scroll", {
+              event_category: "Engagement",
+              event_label: "75% Scroll Depth",
+            });
           }
         });
 
-        // Track 2 minutes on page
+        // Time on page tracking
         setTimeout(function () {
-          if (!timeOnPage2Min) {
-            timeOnPage2Min = true;
-            if (
-              typeof gtag !== "undefined" &&
-              window.cookieConsent.hasConsent()
-            ) {
-              gtag("event", "timing_complete", {
-                event_category: "Engagement",
-                event_label: "2 Minutes on Page",
-              });
-            }
+          if (!timeOnPage30s) {
+            timeOnPage30s = true;
+            trackEvent("timing_complete", {
+              event_category: "Engagement",
+              event_label: "30 Seconds on Page",
+            });
           }
-        }, 120000); // 2 minutes
+        }, 30000);
+
+        setTimeout(function () {
+          if (!timeOnPage2m) {
+            timeOnPage2m = true;
+            trackEvent("timing_complete", {
+              event_category: "Engagement",
+              event_label: "2 Minutes on Page",
+            });
+          }
+        }, 120000);
+
+        setTimeout(function () {
+          if (!timeOnPage5m) {
+            timeOnPage5m = true;
+            trackEvent("timing_complete", {
+              event_category: "Engagement",
+              event_label: "5 Minutes on Page",
+            });
+          }
+        }, 300000);
+
+        // Track external link clicks
+        const externalLinks = document.querySelectorAll(
+          'a[href^="http"]:not([href*="organizer.flipfocus.nl"])'
+        );
+        externalLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            trackEvent("click", {
+              event_category: "External Link",
+              event_label: link.href,
+              outbound: true,
+            });
+          });
+        });
+
+        // Track navigation usage
+        const navLinks = document.querySelectorAll("nav a");
+        navLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            trackEvent("navigate", {
+              event_category: "Navigation",
+              event_label: link.textContent.trim(),
+            });
+          });
+        });
       });
     </script>
 

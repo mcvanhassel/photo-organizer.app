@@ -64,25 +64,388 @@ description: Effortlessly organize your photos and videos with intelligent, auto
   </header>
 
   <main>
-    <section aria-label="App Screenshot" class="pb-16 bg-gray-100">
+    <!-- Hero Screenshot -->
+    <section aria-label="App Hero Screenshot" class="pb-8 bg-gray-100">
       <div class="container mx-auto px-4">
-        <div class="max-w-8xl mx-auto">
+        <div class="max-w-6xl mx-auto">
           <img
             src="{{ site.baseurl }}/assets/images/app-screenshot.png"
-            alt="Photo Organizer desktop app interface showing intelligent photo organization features, including automatic sorting, duplicate detection, and privacy-focused local processing"
+            alt="FlipFocus Photo Organizer main interface showing intelligent photo organization features"
             class="rounded-lg shadow-lg w-full"
-            loading="lazy"
+            loading="eager"
           />
         </div>
       </div>
     </section>
+
+    <!-- Screenshot Gallery -->
+    <section aria-label="App Feature Gallery" class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">
+          See FlipFocus in Action
+        </h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Explore how FlipFocus transforms your photo chaos into perfect
+          organization with intelligent sorting, privacy-first design, and
+          powerful features.
+        </p>
+
+        <div class="screenshot-gallery max-w-7xl mx-auto">
+          <!-- Main Feature Grid -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <!-- Screenshot 1: Smart Organization -->
+            <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
+              onclick="openLightbox(0)"
+            >
+              <img
+                src="{{ site.baseurl }}/assets/images/1.png"
+                alt="FlipFocus smart organization feature - automatic sorting by date and device"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div class="p-4">
+                <h3 class="font-semibold text-lg mb-2">Smart Organization</h3>
+                <p class="text-gray-600 text-sm">
+                  Automatic sorting by date, device, and EXIF data
+                </p>
+              </div>
+            </div>
+
+            <!-- Screenshot 2: Duplicate Detection -->
+            <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
+              onclick="openLightbox(1)"
+            >
+              <img
+                src="{{ site.baseurl }}/assets/images/2.png"
+                alt="FlipFocus duplicate detection feature finding identical photos"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div class="p-4">
+                <h3 class="font-semibold text-lg mb-2">Duplicate Detection</h3>
+                <p class="text-gray-600 text-sm">
+                  Advanced algorithms find duplicates even with different names
+                </p>
+              </div>
+            </div>
+
+            <!-- Screenshot 3: Custom Folder Structure -->
+            <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
+              onclick="openLightbox(2)"
+            >
+              <img
+                src="{{ site.baseurl }}/assets/images/3.png"
+                alt="FlipFocus custom folder structure configuration"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div class="p-4">
+                <h3 class="font-semibold text-lg mb-2">Custom Structure</h3>
+                <p class="text-gray-600 text-sm">
+                  Design your perfect folder organization system
+                </p>
+              </div>
+            </div>
+
+            <!-- Screenshot 4: EXIF Processing -->
+            <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
+              onclick="openLightbox(3)"
+            >
+              <img
+                src="{{ site.baseurl }}/assets/images/4.png"
+                alt="FlipFocus EXIF metadata processing and organization"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div class="p-4">
+                <h3 class="font-semibold text-lg mb-2">EXIF Processing</h3>
+                <p class="text-gray-600 text-sm">
+                  Extract and use metadata for intelligent organization
+                </p>
+              </div>
+            </div>
+
+            <!-- Screenshot 5: Privacy Controls -->
+            <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
+              onclick="openLightbox(4)"
+            >
+              <img
+                src="{{ site.baseurl }}/assets/images/5.png"
+                alt="FlipFocus privacy-first offline operation settings"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div class="p-4">
+                <h3 class="font-semibold text-lg mb-2">Privacy First</h3>
+                <p class="text-gray-600 text-sm">
+                  100% offline operation - your photos never leave your device
+                </p>
+              </div>
+            </div>
+
+            <!-- Screenshot 6: Batch Operations -->
+            <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
+              onclick="openLightbox(5)"
+            >
+              <img
+                src="{{ site.baseurl }}/assets/images/6.png"
+                alt="FlipFocus batch operations for thousands of photos"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div class="p-4">
+                <h3 class="font-semibold text-lg mb-2">Batch Operations</h3>
+                <p class="text-gray-600 text-sm">
+                  Process thousands of photos efficiently
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Screenshots Row -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Screenshots 7-10 -->
+            <div
+              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              onclick="openLightbox(6)"
+            >
+              <img
+                src="{{ site.baseurl }}/assets/images/7.png"
+                alt="FlipFocus advanced settings and customization options"
+                class="w-full h-32 object-cover"
+                loading="lazy"
+              />
+              <div class="p-3">
+                <h4 class="font-medium text-sm">Advanced Settings</h4>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              onclick="openLightbox(7)"
+            >
+              <img
+                src="{{ site.baseurl }}/assets/images/8.png"
+                alt="FlipFocus file format support and compatibility"
+                class="w-full h-32 object-cover"
+                loading="lazy"
+              />
+              <div class="p-3">
+                <h4 class="font-medium text-sm">Format Support</h4>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              onclick="openLightbox(8)"
+            >
+              <img
+                src="{{ site.baseurl }}/assets/images/9.png"
+                alt="FlipFocus progress tracking and operation status"
+                class="w-full h-32 object-cover"
+                loading="lazy"
+              />
+              <div class="p-3">
+                <h4 class="font-medium text-sm">Progress Tracking</h4>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              onclick="openLightbox(9)"
+            >
+              <img
+                src="{{ site.baseurl }}/assets/images/10.png"
+                alt="FlipFocus results overview and organization summary"
+                class="w-full h-32 object-cover"
+                loading="lazy"
+              />
+              <div class="p-3">
+                <h4 class="font-medium text-sm">Results Overview</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div
+      id="lightbox"
+      class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4"
+    >
+      <div class="relative max-w-5xl max-h-full">
+        <button
+          onclick="closeLightbox()"
+          class="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
+          aria-label="Close lightbox"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+        <img
+          id="lightbox-image"
+          src=""
+          alt=""
+          class="max-w-full max-h-full rounded-lg shadow-2xl"
+        />
+        <div class="absolute bottom-4 left-4 right-4 text-center">
+          <p id="lightbox-caption" class="text-white text-lg font-medium"></p>
+          <div class="flex justify-center space-x-2 mt-4">
+            <button
+              onclick="previousImage()"
+              class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-4 py-2 rounded transition"
+            >
+              Previous
+            </button>
+            <button
+              onclick="nextImage()"
+              class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-4 py-2 rounded transition"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Lightbox functionality
+      const screenshots = [
+        {
+          src: "{{ site.baseurl }}/assets/images/1.png",
+          alt: "Smart Organization - Automatic sorting by date and device",
+          caption:
+            "Smart Organization: Automatic sorting by date, device, and EXIF data",
+        },
+        {
+          src: "{{ site.baseurl }}/assets/images/2.png",
+          alt: "Duplicate Detection - Finding identical photos",
+          caption:
+            "Duplicate Detection: Advanced algorithms find duplicates even with different names",
+        },
+        {
+          src: "{{ site.baseurl }}/assets/images/3.png",
+          alt: "Custom Folder Structure - Design your organization",
+          caption:
+            "Custom Structure: Design your perfect folder organization system",
+        },
+        {
+          src: "{{ site.baseurl }}/assets/images/4.png",
+          alt: "EXIF Processing - Metadata extraction",
+          caption:
+            "EXIF Processing: Extract and use metadata for intelligent organization",
+        },
+        {
+          src: "{{ site.baseurl }}/assets/images/5.png",
+          alt: "Privacy Controls - Offline operation",
+          caption:
+            "Privacy First: 100% offline operation - your photos never leave your device",
+        },
+        {
+          src: "{{ site.baseurl }}/assets/images/6.png",
+          alt: "Batch Operations - Process thousands of photos",
+          caption: "Batch Operations: Process thousands of photos efficiently",
+        },
+        {
+          src: "{{ site.baseurl }}/assets/images/7.png",
+          alt: "Advanced Settings - Customization options",
+          caption: "Advanced Settings: Comprehensive customization options",
+        },
+        {
+          src: "{{ site.baseurl }}/assets/images/8.png",
+          alt: "Format Support - File compatibility",
+          caption:
+            "Format Support: All major photo and video formats supported",
+        },
+        {
+          src: "{{ site.baseurl }}/assets/images/9.png",
+          alt: "Progress Tracking - Operation status",
+          caption: "Progress Tracking: Real-time progress and operation status",
+        },
+        {
+          src: "{{ site.baseurl }}/assets/images/10.png",
+          alt: "Results Overview - Organization summary",
+          caption: "Results Overview: Complete summary of organization results",
+        },
+      ];
+
+      let currentImageIndex = 0;
+
+      function openLightbox(index) {
+        currentImageIndex = index;
+        const lightbox = document.getElementById("lightbox");
+        const image = document.getElementById("lightbox-image");
+        const caption = document.getElementById("lightbox-caption");
+
+        image.src = screenshots[index].src;
+        image.alt = screenshots[index].alt;
+        caption.textContent = screenshots[index].caption;
+
+        lightbox.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        document.getElementById("lightbox").classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % screenshots.length;
+        openLightbox(currentImageIndex);
+      }
+
+      function previousImage() {
+        currentImageIndex =
+          (currentImageIndex - 1 + screenshots.length) % screenshots.length;
+        openLightbox(currentImageIndex);
+      }
+
+      // Close lightbox with Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeLightbox();
+        } else if (e.key === "ArrowRight") {
+          nextImage();
+        } else if (e.key === "ArrowLeft") {
+          previousImage();
+        }
+      });
+
+      // Close lightbox when clicking outside the image
+      document
+        .getElementById("lightbox")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeLightbox();
+          }
+        });
+    </script>
 
     <!-- Key Features Section -->
     <section id="features" aria-label="Key Features" class="py-16 bg-white">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Key Features</h2>
         <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div class="p-6 bg-white rounded-xl shadow-lg border border-gray-200">
+          <div class="p-6 bg-white rounded-xl shadow-lg">
             <div
               class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
             >
@@ -106,7 +469,7 @@ description: Effortlessly organize your photos and videos with intelligent, auto
               Intelligent duplicate detection and metadata extraction.
             </p>
           </div>
-          <div class="p-6 bg-white rounded-xl shadow-lg border border-gray-200">
+          <div class="p-6 bg-white rounded-xl shadow-lg">
             <div
               class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
             >
@@ -130,7 +493,7 @@ description: Effortlessly organize your photos and videos with intelligent, auto
               ensuring complete privacy and security.
             </p>
           </div>
-          <div class="p-6 bg-white rounded-xl shadow-lg border border-gray-200">
+          <div class="p-6 bg-white rounded-xl shadow-lg">
             <div
               class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
             >
