@@ -280,7 +280,7 @@ description: Effortlessly organize your photos and videos with intelligent, auto
       id="lightbox"
       class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4"
     >
-      <div class="relative max-w-5xl max-h-full">
+      <div class="relative max-w-5xl w-full max-h-full flex flex-col">
         <!-- Close button with improved visibility -->
         <button
           onclick="closeLightbox()"
@@ -302,16 +302,19 @@ description: Effortlessly organize your photos and videos with intelligent, auto
           </svg>
         </button>
 
-        <img
-          id="lightbox-image"
-          src=""
-          alt=""
-          class="max-w-full max-h-full rounded-lg shadow-2xl"
-        />
+        <!-- Image container with proper sizing -->
+        <div class="flex-1 flex items-center justify-center mb-4">
+          <img
+            id="lightbox-image"
+            src=""
+            alt=""
+            class="max-w-full max-h-full rounded-lg shadow-2xl object-contain"
+          />
+        </div>
 
-        <!-- Caption and navigation with dark backdrop -->
+        <!-- Caption and navigation below the image -->
         <div
-          class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 backdrop-blur-sm p-4 rounded-b-lg"
+          class="bg-black bg-opacity-60 backdrop-blur-sm p-4 rounded-lg mx-auto max-w-2xl w-full"
         >
           <p
             id="lightbox-caption"
