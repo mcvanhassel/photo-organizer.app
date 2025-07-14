@@ -7,15 +7,13 @@
       {{ page.title }}{% if page.title != site.title %} - {{ site.title }}{%
       endif %}
     </title>
-
-    <!-- SEO Meta Tags -->
     <meta
       name="description"
       content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"
     />
     <meta
       name="keywords"
-      content="photo organizer, photo management, image organization, photo sorting, picture organizer, media management, photo library, offline photo organizer, privacy-focused, desktop app, Windows, macOS, duplicate detection, EXIF data, automatic sorting"
+      content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}"
     />
     <meta name="author" content="{{ site.author }}" />
     <meta name="robots" content="index, follow" />
@@ -50,6 +48,8 @@
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@{{ site.social.twitter }}" />
+    <meta name="twitter:creator" content="@{{ site.social.twitter }}" />
     <meta
       name="twitter:title"
       content="{{ page.title }}{% if page.title != site.title %} - {{ site.title }}{% endif %}"
@@ -67,10 +67,9 @@
       content="Photo Organizer app interface showing intelligent photo organization features"
     />
 
-    <!-- App-specific Meta Tags -->
     <meta name="application-name" content="{{ site.title }}" />
-    <meta name="msapplication-TileColor" content="#2563eb" />
-    <meta name="theme-color" content="#2563eb" />
+    <meta name="msapplication-TileColor" content="{{ site.pwa.theme_color }}" />
+    <meta name="theme-color" content="{{ site.pwa.theme_color }}" />
 
     <!-- Structured Data for Application -->
     <script type="application/ld+json">
@@ -180,26 +179,32 @@
     <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
     <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="{{ site.baseurl }}/assets/favicon/favicon32.png"
+      href="/assets/favicon/favicon32.png"
     />
-    <link
-      rel="manifest"
-      href="{{ site.baseurl }}/assets/favicon/site.webmanifest"
-    />
-    <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" />
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Stylesheets -->
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    />
 
     <!-- Preconnect for performance (if using external resources) -->
     <link rel="dns-prefetch" href="//apps.apple.com" />
     <link rel="dns-prefetch" href="//apps.microsoft.com" />
     <link rel="dns-prefetch" href="//github.com" />
 
+    <!-- Jekyll SEO Tag -->
+    {% seo %}
     <!-- Google Analytics (conditionally loaded) -->
     <script>
       // GDPR Consent Management
@@ -723,7 +728,8 @@
       }
     </style>
   </head>
-  <body>
+
+  <body class="bg-white text-gray-900 antialiased">
     <!-- Cookie Banner Overlay -->
     <div id="cookieBanner" class="cookie-banner-overlay">
       <div class="cookie-banner-backdrop"></div>
@@ -914,119 +920,227 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm">
-      <div class="container mx-auto px-4">
-        <div class="flex items-center justify-between h-16">
+    <nav
+      class="bg-white/95 backdrop-blur-light border-b border-gray-200 sticky top-0 z-50"
+    >
+      <div class="max-w-7xl mx-auto container-padding">
+        <div class="flex justify-between items-center h-16">
           <!-- Logo -->
-          <a href="{{ site.baseurl }}/" class="flex items-center">
-            <img
-              src="{{ site.baseurl }}/assets/favicon/app.ico"
-              alt="Photo Organizer - Intelligent Photo Management App Logo"
-              class="w-12 h-12"
-            />
-            <span class="ml-2 text-xl font-semibold text-gray-900"
-              >Photo Organizer</span
-            >
-          </a>
+          <div class="flex items-center">
+            <a href="/" class="flex items-center space-x-2">
+              <img
+                src="{{ site.baseurl }}/assets/favicon/app.ico"
+                alt="Photo Organizer - Intelligent Photo Management App Logo"
+                class="w-12 h-12"
+              />
+              <span class="text-xl font-bold text-gray-900"
+                >FlipFocus • Photo Organizer</span
+              >
+            </a>
+          </div>
 
-          <!-- Navigation Links -->
+          <!-- Desktop Navigation -->
           <div class="hidden md:flex items-center space-x-8">
             <a
-              href="{{ site.baseurl }}/"
-              class="text-gray-600 hover:text-blue-600"
+              href="/"
+              class="nav-link {% if page.url == '/' %}active{% endif %}"
               >Home</a
             >
             <a
-              href="{{ site.baseurl }}/#features"
-              class="text-gray-600 hover:text-blue-600"
-              >Features</a
-            >
-            <a
-              href="{{ site.baseurl }}/#pricing"
-              class="text-gray-600 hover:text-blue-600"
-              >Pricing</a
-            >
-            <a
-              href="{{ site.baseurl }}/#requirements"
-              class="text-gray-600 hover:text-blue-600"
-              >Requirements</a
-            >
-            <a
-              href="{{ site.baseurl }}/#support"
-              class="text-gray-600 hover:text-blue-600"
-              >Support</a
-            >
-            <a
-              href="{{ site.baseurl }}/contact.html"
-              class="text-gray-600 hover:text-blue-600"
+              href="/contact/"
+              class="nav-link {% if page.url == '/contact.html' %}active{% endif %}"
               >Contact</a
+            >
+            <a
+              href="/privacy-policy/"
+              class="nav-link {% if page.url == '/privacy-policy.html' %}active{% endif %}"
+              >Privacy Policy</a
+            >
+            <a
+              href="/terms/"
+              class="nav-link {% if page.url == '/terms.html' %}active{% endif %}"
+              >Terms of Service</a
             >
           </div>
 
           <!-- Mobile menu button -->
           <div class="md:hidden">
             <button
-              type="button"
-              onclick="toggleMobileMenu()"
-              class="text-gray-600 hover:text-blue-600"
-              aria-label="Toggle menu"
+              id="mobile-menu-button"
+              class="text-gray-700 hover:text-flipfocus-600 focus:outline-none"
             >
               <svg
-                class="h-6 w-6"
+                class="w-6 h-6"
                 fill="none"
-                viewBox="0 0 24 24"
                 stroke="currentColor"
+                viewBox="0 0 24 24"
               >
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M4 6h16M4 12h16M4 18h16"
-                />
+                ></path>
               </svg>
             </button>
           </div>
         </div>
+      </div>
 
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-          <div class="px-2 pt-2 pb-3 space-y-1">
-            <a
-              href="{{ site.baseurl }}/"
-              class="block px-3 py-2 text-gray-600 hover:text-blue-600"
-              >Home</a
-            >
-            <a
-              href="{{ site.baseurl }}/#features"
-              class="block px-3 py-2 text-gray-600 hover:text-blue-600"
-              >Features</a
-            >
-            <a
-              href="{{ site.baseurl }}/#pricing"
-              class="block px-3 py-2 text-gray-600 hover:text-blue-600"
-              >Pricing</a
-            >
-            <a
-              href="{{ site.baseurl }}/#requirements"
-              class="block px-3 py-2 text-gray-600 hover:text-blue-600"
-              >Requirements</a
-            >
-            <a
-              href="{{ site.baseurl }}/#support"
-              class="block px-3 py-2 text-gray-600 hover:text-blue-600"
-              >Support</a
-            >
-            <a
-              href="{{ site.baseurl }}/contact.html"
-              class="block px-3 py-2 text-gray-600 hover:text-blue-600"
-              >Contact</a
-            >
-          </div>
+      <!-- Mobile Navigation -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-white border-t border-gray-200"
+      >
+        <div class="container-padding py-4 space-y-2">
+          <a
+            href="/"
+            class="block py-2 nav-link {% if page.url == '/' %}active{% endif %}"
+            >Home</a
+          >
+          <a
+            href="/contact/"
+            class="block py-2 nav-link {% if page.url == '/contact.html' %}active{% endif %}"
+            >Contact</a
+          >
+          <a
+            href="/privacy-policy/"
+            class="block py-2 nav-link {% if page.url == '/privacy-policy.html' %}active{% endif %}"
+            >Privacy Policy</a
+          >
+          <a
+            href="/terms/"
+            class="block py-2 nav-link {% if page.url == '/terms.html' %}active{% endif %}"
+            >Terms of Service</a
+          >
         </div>
       </div>
     </nav>
 
-    {{ content }}
+    <!-- Main Content -->
+    <main>{{ content }}</main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+      <div class="max-w-7xl mx-auto container-padding section-padding">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- Company Info -->
+          <div class="md:col-span-2">
+            <div class="flex items-center space-x-2 mb-4">
+              <div
+                class="w-8 h-8 bg-flipfocus-600 rounded-lg flex items-center justify-center"
+              >
+                <span class="text-white font-bold text-sm">F</span>
+              </div>
+              <span class="text-xl font-bold">FlipFocus</span>
+            </div>
+            <p class="text-gray-400 mb-4 max-w-md">
+              Privacy-first utility apps for Mac and Windows. Offline file
+              management tools with one-time purchase and lifetime updates.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://github.com/{{ site.social.github }}"
+                class="text-gray-400 hover:text-white transition-colors"
+                aria-label="GitHub"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+              </a>
+              {% if site.social.twitter %}
+              <a
+                href="https://twitter.com/{{ site.social.twitter }}"
+                class="text-gray-400 hover:text-white transition-colors"
+                aria-label="Twitter"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  />
+                </svg>
+              </a>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Products -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Products</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="{{ site.products.photo_organizer.url }}"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >{{ site.products.photo_organizer.name }}</a
+                >
+              </li>
+              <li>
+                <a
+                  href="{{ site.products.duplicates_scanner.url }}"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >{{ site.products.duplicates_scanner.name }}</a
+                >
+              </li>
+              <li>
+                <a
+                  href="{{ site.products.all.url }}"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >{{ site.products.all.name }}</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Support</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="/contact/"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/privacy-policy/"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/terms/"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>
+            &copy; {{ 'now' | date: '%Y' }} {{ site.company.founder }}. All
+            rights reserved.
+          </p>
+          <p class="mt-2">
+            Developed by
+            <a
+              href="https://www.mcvanhassel.com"
+              class="text-flipfocus-400 hover:text-flipfocus-300"
+              >Mcvanhassel Web Development</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <script>
       // Extend cookie consent functionality
@@ -1128,11 +1242,6 @@
         }
       });
 
-      function toggleMobileMenu() {
-        const mobileMenu = document.getElementById("mobile-menu");
-        mobileMenu.classList.toggle("hidden");
-      }
-
       // Smooth scroll for hash links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
@@ -1147,6 +1256,136 @@
           }
         });
       });
+
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+
+      // FAQ Toggle Functionality
+      window.toggleFAQ = function (button) {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector(".faq-icon");
+
+        if (answer.classList.contains("hidden")) {
+          // Open this FAQ
+          answer.classList.remove("hidden");
+          icon.style.transform = "rotate(180deg)";
+
+          // Optional: Close other FAQs (uncomment for accordion behavior)
+          // document.querySelectorAll('.faq-answer:not(.hidden)').forEach(otherAnswer => {
+          //   if (otherAnswer !== answer) {
+          //     otherAnswer.classList.add('hidden');
+          //     const otherIcon = otherAnswer.previousElementSibling.querySelector('.faq-icon');
+          //     otherIcon.style.transform = 'rotate(0deg)';
+          //   }
+          // });
+        } else {
+          // Close this FAQ
+          answer.classList.add("hidden");
+          icon.style.transform = "rotate(0deg)";
+        }
+      };
+
+      // Image Modal Functionality
+      let currentImageIndex = 0;
+
+      window.openImageModal = function (src, title, description) {
+        // Find the index of the current image
+        const screenshots = window.screenshotsData || [];
+        currentImageIndex = screenshots.findIndex(
+          (screenshot) => screenshot.src === src
+        );
+
+        // Set modal content
+        document.getElementById("modalImage").src = src;
+        document.getElementById("modalImage").alt = title + " - " + description;
+        document.getElementById("modalTitle").textContent = title;
+        document.getElementById("modalDescription").textContent = description;
+
+        // Show modal
+        document.getElementById("imageModal").classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+
+        // Track analytics event
+        if (typeof trackEvent !== "undefined") {
+          trackEvent("view_screenshot", {
+            event_category: "Engagement",
+            event_label: title,
+            screenshot_index: currentImageIndex + 1,
+          });
+        }
+      };
+
+      window.closeImageModal = function () {
+        document.getElementById("imageModal").classList.add("hidden");
+        document.body.style.overflow = "";
+      };
+
+      window.nextImage = function () {
+        const screenshots = window.screenshotsData || [];
+        if (screenshots.length === 0) return;
+
+        currentImageIndex = (currentImageIndex + 1) % screenshots.length;
+        const screenshot = screenshots[currentImageIndex];
+        window.openImageModal(
+          screenshot.src,
+          screenshot.title,
+          screenshot.description
+        );
+      };
+
+      window.previousImage = function () {
+        const screenshots = window.screenshotsData || [];
+        if (screenshots.length === 0) return;
+
+        currentImageIndex =
+          (currentImageIndex - 1 + screenshots.length) % screenshots.length;
+        const screenshot = screenshots[currentImageIndex];
+        window.openImageModal(
+          screenshot.src,
+          screenshot.title,
+          screenshot.description
+        );
+      };
+
+      // Close modal on escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          window.closeImageModal();
+        }
+        if (e.key === "ArrowRight") {
+          window.nextImage();
+        }
+        if (e.key === "ArrowLeft") {
+          window.previousImage();
+        }
+      });
+
+      // Close modal when clicking outside the image
+      document
+        .getElementById("imageModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            window.closeImageModal();
+          }
+        });
+    </script>
+
+    <!-- Screenshots data for modal functionality -->
+    <script>
+      // Define screenshots data from Jekyll config
+      window.screenshotsData = [
+        {% for screenshot in site.screenshots %}
+        {
+          src: "{{ screenshot.src }}",
+          title: "{{ screenshot.title }}",
+          description: "{{ screenshot.description }}"
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ];
     </script>
   </body>
 </html>

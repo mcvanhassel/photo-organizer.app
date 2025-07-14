@@ -1,6 +1,6 @@
 # Site Settings
-title: Photo Organizer
-description: Intelligent desktop app for organizing photos and videos. Automatic sorting, duplicate detection, and privacy-focused local processing for Windows and macOS.
+title: Photo Organizer - FlipFocus
+description: Intelligent photo and video organization for Mac and Windows. Automatic sorting, duplicate detection, and EXIF-based organization. Privacy-first, offline processing.
 author: Maurits van Hassel
 
 # URL Settings
@@ -9,10 +9,13 @@ baseurl: ""
 
 # Build Settings
 markdown: kramdown
+highlighter: rouge
 
-# SEO Plugins (if you want to add jekyll-seo-tag in the future)
+# SEO Plugins
 plugins:
   - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
 
 # PWA/Manifest Settings
 pwa:
@@ -32,33 +35,107 @@ pwa:
 
 # SEO Settings
 lang: en
-keywords: photo organizer, photo management, image organization, photo sorting, picture organizer, media management, photo library, offline photo organizer, privacy-focused, desktop app, Windows, macOS, duplicate detection, EXIF data, automatic sorting
+keywords: photo organizer, media management, image organization, EXIF data, automatic sorting, duplicate detection, Mac, Windows, desktop app, privacy-first, offline photo tool, photo sorting, picture organizer
 
 # Social Media and Business Info
 social:
-  github: "mcvanhassel/photo-organizer.app"
+  github: "mcvanhassel"
+  twitter: "mcvanhassel"
 
-# Business/App Information for Rich Snippets
-app:
-  name: "Photo Organizer"
+products:
+  all:
+    name: "All Products"
+    url: "https://www.flipfocus.nl/products/"
+  photo_organizer:
+    name: "FlipFocus Photo Organizer"
+    url: "https://organizer.flipfocus.nl"
+  duplicates_scanner:
+    name: "FlipFocus Duplicates Scanner"
+    url: "https://duplicates.flipfocus.nl"
+
+# Product Information
+product:
+  name: "FlipFocus Photo Organizer"
+  tagline: "Intelligent Photo & Video Organization"
   price: "19.99"
   currency: "EUR"
+  version: "1.3.10"
   platforms: ["macOS", "Windows"]
   category: "Productivity"
+  app_store_url: "https://apps.apple.com/us/app/flipfocus-photo-organizer/id6743702259"
+  microsoft_store_url: "https://apps.microsoft.com/detail/9N0T4WCLMJ63"
+
+# Company Information
+company:
+  name: "FlipFocus"
+  founder: "Maurits van Hassel"
+  website: "https://www.flipfocus.nl"
+  support_email: "info@mcvanhassel.com"
+
+# Key Features
+features:
+  - title: "Smart EXIF Sorting"
+    description: "Automatically organize photos by date/device"
+    icon: "calendar"
+  - title: "Duplicate Detection"
+    description: "Find and manage duplicate photos"
+    icon: "duplicate"
+  - title: "Custom Organization"
+    description: "Choose your own folder structures"
+    icon: "folder"
+  - title: "Batch Processing"
+    description: "Handle thousands of photos and videos"
+    icon: "lightning"
+  - title: "Privacy-First"
+    description: "100% offline processing"
+    icon: "shield"
+  - title: "Cross-Platform"
+    description: "Available for both Mac and Windows"
+    icon: "desktop"
+
+# Screenshots Gallery
+screenshots:
+  - src: "/assets/images/7.png"
+    title: "Target Folder Selection"
+    description: "Choose where to move the photos"
+  - src: "/assets/images/6.png"
+    title: "Source Folder Selection"
+    description: "Choose the folders with photos to organize"
+  - src: "/assets/images/1.png"
+    title: "Preview Results"
+    description: "Review the organization structure before applying changes"
+  - src: "/assets/images/2.png"
+    title: "Filter by Issue"
+    description: "Filter by issue to find duplicates, missing metadata, or other issues"
+  - src: "/assets/images/3.png"
+    title: "Start Processing"
+    description: "Start the organization process"
+  - src: "/assets/images/4.png"
+    title: "Processing Overview"
+    description: "Monitor progress as your photos are being organized"
+  - src: "/assets/images/5.png"
+    title: "Processing Summary"
+    description: "View the results of the organization process"
+  - src: "/assets/images/10.png"
+    title: "Dark Mode"
+    description: "The app is available in light and dark mode"
+  - src: "/assets/images/9.png"
+    title: "Preview in Dark Mode"
+    description: "Preview the organization in dark mode"
 
 # Exclude files from processing
 exclude:
-  - README.md
-  - LICENSE
-  - Gemfile
-  - Gemfile.lock
   - node_modules
-  - vendor
   - package.json
   - package-lock.json
   - tailwind.config.js
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
 
-# Include directories and files
+# Include files
 include:
-  - assets
-  - _site/assets
+  - _redirects
+  - robots.txt
+  - sitemap.xml

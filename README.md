@@ -70,7 +70,8 @@ The website is optimized for the following primary keywords:
 - Photo management
 - Image organization
 - Picture organizer
-- Media management
+- EXIF sorting
+- Duplicate photos
 - Desktop photo app
 - Privacy-focused photo tool
 
@@ -124,5 +125,7 @@ bundle exec jekyll build
 ## 📄 License
 
 © 2025 Maurits van Hassel. All rights reserved.
+
+Part of the [FlipFocus](https://www.flipfocus.nl) family of privacy-first utility apps.
 
 Developed by [Mcvanhassel Web Development](https://mcvanhassel.com).

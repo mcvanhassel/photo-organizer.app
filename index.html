@@ -1,294 +1,152 @@
 ---
 layout: default
-title: Photo Organizer - Intelligent Photo Management App
-description: Effortlessly organize your photos and videos with intelligent, automated sorting. Privacy-focused desktop app for Windows and macOS with smart organization features.
+title: Photo Organizer - Intelligent Photo & Video Organization
+description: Intelligent photo and video organization for Mac and Windows. Automatic sorting, duplicate detection, and EXIF-based organization. Privacy-first, offline processing.
 ---
 
-<div class="min-h-screen bg-gray-100">
-  <!-- Hero Section -->
-  <header id="hero" class="container mx-auto px-4 py-8">
-    <div class="max-w-7xl mx-auto text-center">
-      <h1 class="text-5xl font-bold text-gray-900 mb-6">
-        Transform Your Digital Media Organization
-      </h1>
-      <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-        Effortlessly organize your photos and videos with intelligent, automated
-        sorting. Save hours of manual work while keeping your memories perfectly
-        structured - all on your local machine with
-        <span class="font-bold">Photo Organizer</span>.
-      </p>
-      <div class="flex justify-center gap-4 mb-8">
-        <a
-          href="https://apps.apple.com/us/app/flipfocus-photo-organizer/id6743702259"
-          class="inline-flex items-center px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
-        >
-          <svg
-            class="w-5 h-5 mr-2"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12H3V5.25"
-            />
-          </svg>
-          Get from Mac App Store
-        </a>
-        <a
-          href="https://apps.microsoft.com/detail/9N0T4WCLMJ63"
-          class="inline-flex items-center px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
-        >
-          <svg
-            class="w-5 h-5 mr-2"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3 8.25V18a2.25 2.25 0 0 0 2.25 2.25h13.5A2.25 2.25 0 0 0 21 18V8.25m-18 0V6a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6ZM7.5 6h.008v.008H7.5V6Zm2.25 0h.008v.008H9.75V6Z"
-            />
-          </svg>
-          Get from Microsoft Store
-        </a>
-      </div>
-      <div class="text-sm text-gray-500">
-        Available on macOS 10.15+ and Windows 10/11
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero Screenshot -->
-    <section aria-label="App Hero Screenshot" class="pb-8 bg-gray-100">
-      <div class="container mx-auto px-4">
-        <div class="max-w-6xl mx-auto">
-          <img
-            src="{{ site.baseurl }}/assets/images/app-screenshot.png"
-            alt="FlipFocus Photo Organizer main interface showing intelligent photo organization features"
-            class="rounded-lg shadow-lg w-full"
-            loading="eager"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Screenshot Gallery -->
-    <section aria-label="App Feature Gallery" class="py-16 bg-gray-100">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-4">
-          See FlipFocus Photo Organizer in Action
-        </h2>
-        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          Explore how FlipFocus transforms your photo chaos into perfect
-          organization with intelligent sorting, privacy-first design, and
-          powerful features.
+<!-- Hero Section -->
+<section class="hero-section section-padding">
+  <div class="max-w-7xl mx-auto container-padding">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Column - Content -->
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Smart <span class="text-gradient">Photo Organization</span>
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">
+          Transform your photo chaos into organized perfection. Automatically
+          sort thousands of photos and videos by date and device, all while
+          keeping your data completely private.
         </p>
 
-        <div class="screenshot-gallery max-w-7xl mx-auto">
-          <!-- Main Feature Grid -->
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <!-- Screenshot 1: Smart Organization -->
-            <div
-              class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
-              onclick="openLightbox(0)"
+        <!-- Key Benefits -->
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <div class="flex items-center space-x-2">
+            <svg
+              class="w-5 h-5 text-green-600"
+              fill="currentColor"
+              viewBox="0 0 20 20"
             >
-              <img
-                src="{{ site.baseurl }}/assets/images/1.png"
-                alt="FlipFocus smart organization feature - automatic sorting by date and device"
-                class="w-full h-48 object-cover"
-                loading="lazy"
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
               />
-              <div class="p-4">
-                <h3 class="font-semibold text-lg mb-2">Smart Organization</h3>
-                <p class="text-gray-600 text-sm">
-                  Automatic sorting by date, device, and EXIF data
-                </p>
-              </div>
-            </div>
-
-            <!-- Screenshot 2: Duplicate Detection -->
-            <div
-              class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
-              onclick="openLightbox(1)"
-            >
-              <img
-                src="{{ site.baseurl }}/assets/images/2.png"
-                alt="FlipFocus duplicate detection feature finding identical photos"
-                class="w-full h-48 object-cover"
-                loading="lazy"
-              />
-              <div class="p-4">
-                <h3 class="font-semibold text-lg mb-2">Duplicate Detection</h3>
-                <p class="text-gray-600 text-sm">
-                  Advanced algorithms find duplicates even with different names
-                </p>
-              </div>
-            </div>
-
-            <!-- Screenshot 3: Custom Folder Structure -->
-            <div
-              class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
-              onclick="openLightbox(2)"
-            >
-              <img
-                src="{{ site.baseurl }}/assets/images/3.png"
-                alt="FlipFocus custom folder structure configuration"
-                class="w-full h-48 object-cover"
-                loading="lazy"
-              />
-              <div class="p-4">
-                <h3 class="font-semibold text-lg mb-2">Custom Structure</h3>
-                <p class="text-gray-600 text-sm">
-                  Design your perfect folder organization system
-                </p>
-              </div>
-            </div>
-
-            <!-- Screenshot 4: EXIF Processing -->
-            <div
-              class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
-              onclick="openLightbox(3)"
-            >
-              <img
-                src="{{ site.baseurl }}/assets/images/4.png"
-                alt="FlipFocus EXIF metadata processing and organization"
-                class="w-full h-48 object-cover"
-                loading="lazy"
-              />
-              <div class="p-4">
-                <h3 class="font-semibold text-lg mb-2">EXIF Processing</h3>
-                <p class="text-gray-600 text-sm">
-                  Extract and use metadata for intelligent organization
-                </p>
-              </div>
-            </div>
-
-            <!-- Screenshot 5: Privacy Controls -->
-            <div
-              class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
-              onclick="openLightbox(4)"
-            >
-              <img
-                src="{{ site.baseurl }}/assets/images/5.png"
-                alt="FlipFocus privacy-first offline operation settings"
-                class="w-full h-48 object-cover"
-                loading="lazy"
-              />
-              <div class="p-4">
-                <h3 class="font-semibold text-lg mb-2">Privacy First</h3>
-                <p class="text-gray-600 text-sm">
-                  100% offline operation - your photos never leave your device
-                </p>
-              </div>
-            </div>
-
-            <!-- Screenshot 6: Batch Operations -->
-            <div
-              class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
-              onclick="openLightbox(5)"
-            >
-              <img
-                src="{{ site.baseurl }}/assets/images/6.png"
-                alt="FlipFocus batch operations for thousands of photos"
-                class="w-full h-48 object-cover"
-                loading="lazy"
-              />
-              <div class="p-4">
-                <h3 class="font-semibold text-lg mb-2">Batch Operations</h3>
-                <p class="text-gray-600 text-sm">
-                  Process thousands of photos efficiently
-                </p>
-              </div>
-            </div>
+            </svg>
+            <span class="text-sm font-medium text-gray-700">100% Offline</span>
           </div>
-
-          <!-- Additional Screenshots Row -->
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Screenshots 7-10 -->
-            <div
-              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-              onclick="openLightbox(6)"
+          <div class="flex items-center space-x-2">
+            <svg
+              class="w-5 h-5 text-blue-600"
+              fill="currentColor"
+              viewBox="0 0 20 20"
             >
-              <img
-                src="{{ site.baseurl }}/assets/images/7.png"
-                alt="FlipFocus advanced settings and customization options"
-                class="w-full h-32 object-cover"
-                loading="lazy"
+              <path
+                fill-rule="evenodd"
+                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                clip-rule="evenodd"
               />
-              <div class="p-3">
-                <h4 class="font-medium text-sm">Advanced Settings</h4>
-              </div>
-            </div>
-
-            <div
-              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-              onclick="openLightbox(7)"
+            </svg>
+            <span class="text-sm font-medium text-gray-700">Privacy-First</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <svg
+              class="w-5 h-5 text-purple-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-              <img
-                src="{{ site.baseurl }}/assets/images/8.png"
-                alt="FlipFocus file format support and compatibility"
-                class="w-full h-32 object-cover"
-                loading="lazy"
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M7 4h10M7 4l-2 14h14L17 4M9 9v6M15 9v6"
               />
-              <div class="p-3">
-                <h4 class="font-medium text-sm">Format Support</h4>
-              </div>
-            </div>
-
-            <div
-              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-              onclick="openLightbox(8)"
+            </svg>
+            <span class="text-sm font-medium text-gray-700"
+              >Smart EXIF Sorting</span
             >
-              <img
-                src="{{ site.baseurl }}/assets/images/9.png"
-                alt="FlipFocus progress tracking and operation status"
-                class="w-full h-32 object-cover"
-                loading="lazy"
-              />
-              <div class="p-3">
-                <h4 class="font-medium text-sm">Progress Tracking</h4>
-              </div>
-            </div>
-
-            <div
-              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-              onclick="openLightbox(9)"
+          </div>
+          <div class="flex items-center space-x-2">
+            <svg
+              class="w-5 h-5 text-orange-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-              <img
-                src="{{ site.baseurl }}/assets/images/10.png"
-                alt="FlipFocus results overview and organization summary"
-                class="w-full h-32 object-cover"
-                loading="lazy"
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
               />
-              <div class="p-3">
-                <h4 class="font-medium text-sm">Results Overview</h4>
-              </div>
-            </div>
+            </svg>
+            <span class="text-sm font-medium text-gray-700"
+              >Duplicate Detection</span
+            >
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Lightbox Modal -->
-    <div
-      id="lightbox"
-      class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4"
-    >
-      <div class="relative max-w-5xl w-full max-h-full flex flex-col">
-        <!-- Close button with improved visibility -->
-        <button
-          onclick="closeLightbox()"
-          class="absolute top-4 right-4 text-white hover:text-gray-300 z-10 bg-black bg-opacity-50 backdrop-blur-sm rounded-full p-2 transition-all hover:bg-opacity-70"
-          aria-label="Close lightbox"
+        <!-- Pricing and CTA -->
+        <div class="flex items-center space-x-4 mb-8">
+          <div class="text-3xl font-bold text-flipfocus-600">
+            €{{ site.product.price }}
+          </div>
+          <div class="text-gray-500">One-time purchase</div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="{{ site.product.app_store_url }}" class="btn-primary">
+            Download for Mac
+          </a>
+          <a href="{{ site.product.microsoft_store_url }}" class="btn-outline">
+            Download for Windows
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column - App Screenshot -->
+      <div class="relative">
+        <div
+          class="relative z-10 cursor-pointer"
+          onclick="openImageModal('{{ site.screenshots[2].src }}', '{{ site.screenshots[2].title }}', '{{ site.screenshots[2].description }}')"
         >
+          <img
+            src="{{ site.screenshots[2].src }}"
+            alt="{{ site.screenshots[2].title }} - {{ site.screenshots[2].description }}"
+            class="rounded-2xl shadow-2xl"
+          />
+        </div>
+        <!-- Background decoration -->
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-flipfocus-100 to-blue-100 rounded-2xl transform rotate-3 scale-105 -z-10"
+        ></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="section-padding bg-white">
+  <div class="max-w-7xl mx-auto container-padding">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Powerful Features for Perfect Organization
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Effortlessly organize your photos and videos with fast, automated
+        sorting. Save hours of manual work and keep your memories perfectly
+        structured.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for feature in site.features %}
+      <div class="card text-center">
+        <div class="feature-icon mx-auto">
+          {% if feature.icon == 'calendar' %}
           <svg
-            class="w-8 h-8"
+            class="w-6 h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -297,451 +155,743 @@ description: Effortlessly organize your photos and videos with intelligent, auto
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+            />
           </svg>
-        </button>
-
-        <!-- Image container with proper sizing -->
-        <div class="flex-1 flex items-center justify-center mb-4">
-          <img
-            id="lightbox-image"
-            src=""
-            alt=""
-            class="max-w-full max-h-full rounded-lg shadow-2xl object-contain"
-          />
+          {% elsif feature.icon == 'duplicate' %}
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            />
+          </svg>
+          {% elsif feature.icon == 'folder' %}
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+            />
+          </svg>
+          {% elsif feature.icon == 'lightning' %}
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            />
+          </svg>
+          {% elsif feature.icon == 'shield' %}
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+            />
+          </svg>
+          {% elsif feature.icon == 'desktop' %}
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            />
+          </svg>
+          {% endif %}
         </div>
-
-        <!-- Caption and navigation below the image -->
-        <div
-          class="bg-black bg-opacity-60 backdrop-blur-sm p-4 rounded-lg mx-auto max-w-2xl w-full"
-        >
-          <p
-            id="lightbox-caption"
-            class="text-white text-lg font-medium text-center mb-4 drop-shadow-lg"
-          ></p>
-          <div class="flex justify-center space-x-4">
-            <button
-              onclick="previousImage()"
-              class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-2 rounded-full transition-all backdrop-blur-sm border border-white border-opacity-20 hover:border-opacity-40"
-            >
-              ← Previous
-            </button>
-            <button
-              onclick="nextImage()"
-              class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-2 rounded-full transition-all backdrop-blur-sm border border-white border-opacity-20 hover:border-opacity-40"
-            >
-              Next →
-            </button>
-          </div>
-        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+          {{ feature.title }}
+        </h3>
+        <p class="text-gray-600">{{ feature.description }}</p>
       </div>
+      {% endfor %}
     </div>
+  </div>
+</section>
 
-    <script>
-      // Lightbox functionality
-      const screenshots = [
-        {
-          src: "{{ site.baseurl }}/assets/images/1.png",
-          alt: "Smart Organization - Automatic sorting by date and device",
-          caption:
-            "Smart Organization: Automatic sorting by date, device, and EXIF data",
-        },
-        {
-          src: "{{ site.baseurl }}/assets/images/2.png",
-          alt: "Duplicate Detection - Finding identical photos",
-          caption:
-            "Duplicate Detection: Advanced algorithms find duplicates even with different names",
-        },
-        {
-          src: "{{ site.baseurl }}/assets/images/3.png",
-          alt: "Custom Folder Structure - Design your organization",
-          caption:
-            "Custom Structure: Design your perfect folder organization system",
-        },
-        {
-          src: "{{ site.baseurl }}/assets/images/4.png",
-          alt: "EXIF Processing - Metadata extraction",
-          caption:
-            "EXIF Processing: Extract and use metadata for intelligent organization",
-        },
-        {
-          src: "{{ site.baseurl }}/assets/images/5.png",
-          alt: "Privacy Controls - Offline operation",
-          caption:
-            "Privacy First: 100% offline operation - your photos never leave your device",
-        },
-        {
-          src: "{{ site.baseurl }}/assets/images/6.png",
-          alt: "Batch Operations - Process thousands of photos",
-          caption: "Batch Operations: Process thousands of photos efficiently",
-        },
-        {
-          src: "{{ site.baseurl }}/assets/images/7.png",
-          alt: "Advanced Settings - Customization options",
-          caption: "Advanced Settings: Comprehensive customization options",
-        },
-        {
-          src: "{{ site.baseurl }}/assets/images/8.png",
-          alt: "Format Support - File compatibility",
-          caption:
-            "Format Support: All major photo and video formats supported",
-        },
-        {
-          src: "{{ site.baseurl }}/assets/images/9.png",
-          alt: "Progress Tracking - Operation status",
-          caption: "Progress Tracking: Real-time progress and operation status",
-        },
-        {
-          src: "{{ site.baseurl }}/assets/images/10.png",
-          alt: "Results Overview - Organization summary",
-          caption: "Results Overview: Complete summary of organization results",
-        },
-      ];
-
-      let currentImageIndex = 0;
-
-      function openLightbox(index) {
-        currentImageIndex = index;
-        const lightbox = document.getElementById("lightbox");
-        const image = document.getElementById("lightbox-image");
-        const caption = document.getElementById("lightbox-caption");
-
-        image.src = screenshots[index].src;
-        image.alt = screenshots[index].alt;
-        caption.textContent = screenshots[index].caption;
-
-        lightbox.classList.remove("hidden");
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeLightbox() {
-        document.getElementById("lightbox").classList.add("hidden");
-        document.body.style.overflow = "auto";
-      }
-
-      function nextImage() {
-        currentImageIndex = (currentImageIndex + 1) % screenshots.length;
-        openLightbox(currentImageIndex);
-      }
-
-      function previousImage() {
-        currentImageIndex =
-          (currentImageIndex - 1 + screenshots.length) % screenshots.length;
-        openLightbox(currentImageIndex);
-      }
-
-      // Close lightbox with Escape key
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") {
-          closeLightbox();
-        } else if (e.key === "ArrowRight") {
-          nextImage();
-        } else if (e.key === "ArrowLeft") {
-          previousImage();
-        }
-      });
-
-      // Close lightbox when clicking outside the image
-      document
-        .getElementById("lightbox")
-        .addEventListener("click", function (e) {
-          if (e.target === this) {
-            closeLightbox();
-          }
-        });
-    </script>
-
-    <!-- Key Features Section -->
-    <section id="features" aria-label="Key Features" class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Key Features</h2>
-        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div class="p-6 bg-white rounded-xl shadow-lg border border-gray-200">
-            <div
-              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-blue-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Smart Organization</h3>
-            <p class="text-gray-600">
-              Automatic sorting based on date, device, and EXIF data.
-              Intelligent duplicate detection and metadata extraction.
-            </p>
-          </div>
-          <div class="p-6 bg-white rounded-xl shadow-lg border border-gray-200">
-            <div
-              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-blue-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Privacy First</h3>
-            <p class="text-gray-600">
-              100% offline operation. Your files never leave your device,
-              ensuring complete privacy and security.
-            </p>
-          </div>
-          <div class="p-6 bg-white rounded-xl shadow-lg border border-gray-200">
-            <div
-              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-blue-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Complete Control</h3>
-            <p class="text-gray-600">
-              Customize organization structure, rename files, handle duplicates,
-              and manage your media your way.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" aria-label="Pricing" class="py-16 bg-gray-100">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-12">Simple, One-Time Pricing</h2>
-        <div
-          class="max-w-md mx-auto bg-white rounded-xl shadow-lg overflow-hidden"
-        >
-          <div class="p-8">
-            <div
-              class="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-4"
-            >
-              Limited Time Offer
-            </div>
-            <div class="mb-4">
-              <span class="text-4xl font-bold">€19.99</span>
-              <span class="text-gray-500 line-through ml-2">€29.99</span>
-            </div>
-            <p class="text-gray-600 mb-6">
-              One-time purchase, lifetime updates
-            </p>
-            <a
-              href="{{ site.baseurl }}/#hero"
-              class="block w-full bg-blue-600 text-white rounded-lg px-6 py-3 hover:bg-blue-700 transition"
-            >
-              Get 33% Off - Limited Time
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- System Requirements -->
-    <section
-      id="requirements"
-      aria-label="System Requirements"
-      class="py-16 bg-white"
-    >
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">
-          System Requirements
-        </h2>
-        <div class="max-w-2xl mx-auto grid md:grid-cols-2 gap-8">
-          <div class="text-center p-6">
-            <h3 class="text-xl font-semibold mb-4">macOS</h3>
-            <p class="text-gray-600">macOS 10.15 (Catalina) or later</p>
-          </div>
-          <div class="text-center p-6">
-            <h3 class="text-xl font-semibold mb-4">Windows</h3>
-            <p class="text-gray-600">Windows 10 or Windows 11</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section for Featured Snippets -->
-    <section
-      id="faq"
-      aria-label="Frequently Asked Questions"
-      class="py-16 bg-white"
-    >
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">
-          Frequently Asked Questions
-        </h2>
-        <div class="max-w-4xl mx-auto">
-          <div class="space-y-8">
-            <div class="border-b border-gray-200 pb-6">
-              <h3 class="text-xl font-semibold mb-3">
-                How does Photo Organizer protect my privacy?
-              </h3>
-              <p class="text-gray-600">
-                Photo Organizer operates 100% offline. All file processing
-                happens locally on your device, and your photos never leave your
-                computer. We don't collect any personal data or usage analytics.
-              </p>
-            </div>
-            <div class="border-b border-gray-200 pb-6">
-              <h3 class="text-xl font-semibold mb-3">
-                What file formats are supported?
-              </h3>
-              <p class="text-gray-600">
-                Photo Organizer supports all major photo formats (JPEG, PNG,
-                HEIC, RAW files) and video formats (MP4, MOV, AVI). The app
-                reads EXIF metadata to intelligently organize your files.
-              </p>
-            </div>
-            <div class="border-b border-gray-200 pb-6">
-              <h3 class="text-xl font-semibold mb-3">
-                Can I undo organization changes?
-              </h3>
-              <p class="text-gray-600">
-                Yes! Photo Organizer offers both copy and move modes. We
-                recommend using copy mode first to test the organization
-                structure before committing to moving files.
-              </p>
-            </div>
-            <div class="border-b border-gray-200 pb-6">
-              <h3 class="text-xl font-semibold mb-3">
-                How does duplicate detection work?
-              </h3>
-              <p class="text-gray-600">
-                The app uses advanced hash algorithms to identify duplicate
-                files, even if they have different names or are in different
-                folders. You can choose to keep, delete, or move duplicates.
-              </p>
-            </div>
-            <div class="border-b border-gray-200 pb-6">
-              <h3 class="text-xl font-semibold mb-3">
-                Is there a limit to how many photos I can organize?
-              </h3>
-              <p class="text-gray-600">
-                There's no artificial limit, but performance depends on your
-                system resources. For optimal performance, we recommend
-                processing fewer than 5,000 files at once for large collections.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Support Section -->
-    <section
-      id="support"
-      aria-label="Support and Resources"
-      class="py-16 bg-gray-100"
-    >
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">
-          Support & Resources
-        </h2>
-        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-          <div class="bg-white p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold mb-4">Community & Help</h3>
-            <ul class="space-y-3">
-              <!-- <li><a href="#" class="text-blue-600 hover:underline">FAQ</a></li> -->
-              <li>
-                <a
-                  href="https://github.com/mcvanhassel/photo-organizer.app/discussions"
-                  class="text-blue-600 hover:underline"
-                  >GitHub Discussions</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/mcvanhassel/photo-organizer.app/issues"
-                  class="text-blue-600 hover:underline"
-                  >Report an Issue</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold mb-4">Contact & Legal</h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="{{ site.baseurl }}/contact.html"
-                  class="text-blue-600 hover:underline"
-                  >Contact Support</a
-                >
-              </li>
-              <!-- <li>
-                <a href="#" class="text-blue-600 hover:underline"
-                  >Follow us on X (Twitter)</a
-                >
-              </li> -->
-              <li>
-                <a
-                  href="{{ site.baseurl }}/privacy-policy.html"
-                  class="text-blue-600 hover:underline"
-                  >Privacy Policy</a
-                >
-              </li>
-              <li>
-                <a
-                  href="{{ site.baseurl }}/terms.html"
-                  class="text-blue-600 hover:underline"
-                  >Terms of Service</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="py-8 bg-gray-900 text-gray-400">
-    <div class="container mx-auto px-4 text-center">
-      <p class="mb-2">&copy; 2025 Maurits van Hassel. All rights reserved.</p>
-      <p class="text-sm">
-        Developed by
-        <a
-          href="https://mcvanhassel.com"
-          class="text-blue-400 hover:text-blue-300 underline"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Mcvanhassel Web Development
-        </a>
+<!-- How It Works Section -->
+<section class="section-padding gradient-bg">
+  <div class="max-w-7xl mx-auto container-padding">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        How It Works
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Get organized in three simple steps. No technical expertise required.
       </p>
     </div>
-  </footer>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div
+          class="w-16 h-16 bg-flipfocus-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4"
+        >
+          1
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+          Select Your Photos
+        </h3>
+        <p class="text-gray-600">
+          Choose the folders containing your photos and videos. The app will
+          scan and analyze all your media files.
+        </p>
+      </div>
+
+      <div class="text-center">
+        <div
+          class="w-16 h-16 bg-flipfocus-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4"
+        >
+          2
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+          Configure Organization
+        </h3>
+        <p class="text-gray-600">
+          Set your preferred folder structure and naming conventions. The app
+          uses EXIF data for intelligent sorting.
+        </p>
+      </div>
+
+      <div class="text-center">
+        <div
+          class="w-16 h-16 bg-flipfocus-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4"
+        >
+          3
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+          Organize & Enjoy
+        </h3>
+        <p class="text-gray-600">
+          Let the app organize your photos automatically. Find duplicates, sort
+          by date, and create perfect folder structures.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Screenshots Gallery -->
+<section class="section-padding bg-white">
+  <div class="max-w-7xl mx-auto container-padding">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        See It in Action
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Take a look at the intuitive interface designed to make photo
+        organization effortless. Click any image to view it larger.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for screenshot in site.screenshots %}
+      <div
+        class="relative group cursor-pointer"
+        onclick="openImageModal('{{ screenshot.src }}', '{{ screenshot.title }}', '{{ screenshot.description }}')"
+      >
+        <div
+          class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105"
+        >
+          <img
+            src="{{ screenshot.src }}"
+            alt="{{ screenshot.title }} - {{ screenshot.description }}"
+            class="w-full h-48 object-cover transition-transform duration-300"
+            loading="lazy"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          ></div>
+
+          <!-- Overlay Content -->
+          <div
+            class="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+          >
+            <h3 class="font-semibold text-sm mb-1">{{ screenshot.title }}</h3>
+            <p class="text-xs opacity-90">{{ screenshot.description }}</p>
+          </div>
+
+          <!-- Zoom Icon -->
+          <div
+            class="absolute top-3 right-3 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <svg
+              class="w-4 h-4 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Image Modal -->
+<div
+  id="imageModal"
+  class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm"
+>
+  <div class="flex items-center justify-center min-h-screen p-4">
+    <div class="relative max-w-6xl max-h-[90vh] w-full">
+      <!-- Close Button -->
+      <button
+        onclick="closeImageModal()"
+        class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200 z-10"
+        aria-label="Close modal"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+
+      <!-- Image Container -->
+      <div class="bg-white rounded-lg overflow-hidden shadow-2xl">
+        <img
+          id="modalImage"
+          src=""
+          alt=""
+          class="w-full h-auto max-h-[70vh] object-contain"
+        />
+
+        <!-- Image Info -->
+        <div class="p-6 bg-white">
+          <h3
+            id="modalTitle"
+            class="text-xl font-semibold text-gray-900 mb-2"
+          ></h3>
+          <p id="modalDescription" class="text-gray-600"></p>
+        </div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button
+        onclick="previousImage()"
+        class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors duration-200 bg-black/30 backdrop-blur-sm rounded-full p-2"
+        aria-label="Previous image"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+
+      <button
+        onclick="nextImage()"
+        class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors duration-200 bg-black/30 backdrop-blur-sm rounded-full p-2"
+        aria-label="Next image"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
 </div>
+
+<!-- Testimonials or Social Proof -->
+<section class="section-padding gradient-bg">
+  <div class="max-w-7xl mx-auto container-padding">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Trusted by Photographers & Families
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Join users who've transformed their photo chaos into organized
+        perfection.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="card text-center">
+        <div class="text-4xl text-flipfocus-600 mb-4">📸</div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+          Professional Photographers
+        </h3>
+        <p class="text-gray-600">
+          "Efficient tool for managing client photo shoots. The EXIF sorting
+          saves me a lot of manual work."
+        </p>
+      </div>
+
+      <div class="card text-center">
+        <div class="text-4xl text-flipfocus-600 mb-4">👨‍👩‍👧‍👦</div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Families</h3>
+        <p class="text-gray-600">
+          "Finally organized 15 years of family photos. The duplicate detection
+          found hundreds of duplicates!"
+        </p>
+      </div>
+
+      <div class="card text-center">
+        <div class="text-4xl text-flipfocus-600 mb-4">🎨</div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+          Creative Professionals
+        </h3>
+        <p class="text-gray-600">
+          "Privacy-first approach is perfect for client work. Everything stays
+          on my machine, completely secure."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section-padding bg-white">
+  <div class="max-w-4xl mx-auto container-padding">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Everything you need to know about Photo Organizer. Can't find the answer
+        you're looking for?
+        <a
+          href="/contact/"
+          class="text-flipfocus-600 hover:text-flipfocus-700 underline"
+          >Contact our support team</a
+        >.
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      <!-- FAQ Item 1 -->
+      <div class="bg-gray-50 rounded-lg overflow-hidden">
+        <button
+          class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition-colors duration-200"
+          onclick="toggleFAQ(this)"
+        >
+          <span class="text-lg font-semibold text-gray-900"
+            >How does Photo Organizer protect my privacy?</span
+          >
+          <svg
+            class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        <div class="faq-answer hidden px-6 pb-4">
+          <p class="text-gray-600 leading-relaxed">
+            Photo Organizer operates 100% offline. All file processing happens
+            locally on your device, and your photos never leave your computer.
+            We don't collect any personal data, usage analytics, or require
+            internet connectivity. Your privacy is completely protected.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="bg-gray-50 rounded-lg overflow-hidden">
+        <button
+          class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition-colors duration-200"
+          onclick="toggleFAQ(this)"
+        >
+          <span class="text-lg font-semibold text-gray-900"
+            >What file formats are supported?</span
+          >
+          <svg
+            class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        <div class="faq-answer hidden px-6 pb-4">
+          <p class="text-gray-600 leading-relaxed">
+            Photo Organizer supports all major photo formats including JPEG,
+            PNG, HEIC, TIFF, and RAW files from all major camera manufacturers.
+            For videos, it supports MP4, MOV, AVI, and other common formats. The
+            app reads EXIF metadata to intelligently organize your files.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="bg-gray-50 rounded-lg overflow-hidden">
+        <button
+          class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition-colors duration-200"
+          onclick="toggleFAQ(this)"
+        >
+          <span class="text-lg font-semibold text-gray-900"
+            >Can I undo organization changes?</span
+          >
+          <svg
+            class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        <div class="faq-answer hidden px-6 pb-4">
+          <p class="text-gray-600 leading-relaxed">
+            Photo Organizer offers both copy and move modes. We recommend using
+            copy mode first to test the organization structure before committing
+            to moving files. There's also a preview section that allows you to
+            see the results before processing.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="bg-gray-50 rounded-lg overflow-hidden">
+        <button
+          class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition-colors duration-200"
+          onclick="toggleFAQ(this)"
+        >
+          <span class="text-lg font-semibold text-gray-900"
+            >How does duplicate detection work?</span
+          >
+          <svg
+            class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        <div class="faq-answer hidden px-6 pb-4">
+          <p class="text-gray-600 leading-relaxed">
+            The app uses advanced hash algorithms to identify duplicate files by
+            analyzing their content, not just filenames. It can find duplicates
+            even if they have different names, are in different folders, or have
+            slightly different metadata. You can choose to keep, ignore, or
+            rename duplicates based on your preferences.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 5 -->
+      <div class="bg-gray-50 rounded-lg overflow-hidden">
+        <button
+          class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition-colors duration-200"
+          onclick="toggleFAQ(this)"
+        >
+          <span class="text-lg font-semibold text-gray-900"
+            >Is there a limit to how many photos I can organize?</span
+          >
+          <svg
+            class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        <div class="faq-answer hidden px-6 pb-4">
+          <p class="text-gray-600 leading-relaxed">
+            There's no artificial limit imposed by the software. The actual
+            limit depends on your system's available memory and storage space.
+            For optimal performance with large collections, we recommend
+            processing folders with fewer than 5,000 files at once.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 6 -->
+      <div class="bg-gray-50 rounded-lg overflow-hidden">
+        <button
+          class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition-colors duration-200"
+          onclick="toggleFAQ(this)"
+        >
+          <span class="text-lg font-semibold text-gray-900"
+            >What are the system requirements?</span
+          >
+          <svg
+            class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        <div class="faq-answer hidden px-6 pb-4">
+          <p class="text-gray-600 leading-relaxed">
+            <strong>Mac:</strong> macOS 10.15 (Catalina) or later, 4GB RAM
+            minimum (8GB recommended for large collections).<br />
+            <strong>Windows:</strong> Windows 10 or Windows 11, 4GB RAM minimum
+            (8GB recommended for large collections).
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 7 -->
+      <div class="bg-gray-50 rounded-lg overflow-hidden">
+        <button
+          class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition-colors duration-200"
+          onclick="toggleFAQ(this)"
+        >
+          <span class="text-lg font-semibold text-gray-900"
+            >Do I get free updates?</span
+          >
+          <svg
+            class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        <div class="faq-answer hidden px-6 pb-4">
+          <p class="text-gray-600 leading-relaxed">
+            Yes! Your one-time purchase includes all future updates and new
+            features at no additional cost. We will release updates with
+            performance improvements, bug fixes, and new functionality based on
+            user feedback.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 8 -->
+      <div class="bg-gray-50 rounded-lg overflow-hidden">
+        <button
+          class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition-colors duration-200"
+          onclick="toggleFAQ(this)"
+        >
+          <span class="text-lg font-semibold text-gray-900"
+            >What organization structure can I use?</span
+          >
+          <svg
+            class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        <div class="faq-answer hidden px-6 pb-4">
+          <p class="text-gray-600 leading-relaxed">
+            You can choose from various folder structures including date
+            (year/month/day) and device. The app provides these as preset
+            templates for common organization methods.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 9 -->
+      <div class="bg-gray-50 rounded-lg overflow-hidden">
+        <button
+          class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition-colors duration-200"
+          onclick="toggleFAQ(this)"
+        >
+          <span class="text-lg font-semibold text-gray-900"
+            >What if my photos don't have EXIF data?</span
+          >
+          <svg
+            class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        <div class="faq-answer hidden px-6 pb-4">
+          <p class="text-gray-600 leading-relaxed">
+            Photo Organizer can still organize your files using file creation
+            dates. While EXIF data provides the most accurate organization, the
+            app has fallback methods to ensure all your photos can be properly
+            sorted and organized.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 10 -->
+      <div class="bg-gray-50 rounded-lg overflow-hidden">
+        <button
+          class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition-colors duration-200"
+          onclick="toggleFAQ(this)"
+        >
+          <span class="text-lg font-semibold text-gray-900"
+            >Is there a trial version available?</span
+          >
+          <svg
+            class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        <div class="faq-answer hidden px-6 pb-4">
+          <p class="text-gray-600 leading-relaxed">
+            You can download a free trial version from the Mac App Store and
+            Microsoft Store. If you're not satisfied with the paid version of
+            the app, you can request a refund within their standard refund
+            windows.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="section-padding bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto container-padding text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+      Ready to Organize Your Photos?
+    </h2>
+    <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+      Transform your photo chaos into organized perfection. One-time purchase,
+      lifetime updates, complete privacy.
+    </p>
+
+    <div class="flex items-center justify-center space-x-4 mb-8">
+      <div class="text-4xl font-bold text-flipfocus-400">
+        €{{ site.product.price }}
+      </div>
+      <div class="text-gray-300">One-time purchase</div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="{{ site.product.app_store_url }}" class="btn-primary">
+        Download for Mac
+      </a>
+      <a href="{{ site.product.microsoft_store_url }}" class="btn-secondary">
+        Download for Windows
+      </a>
+    </div>
+
+    <p class="text-gray-400 mt-8">
+      Also available:
+      <a
+        href="{{ site.products.duplicates_scanner.url }}"
+        class="text-flipfocus-400 hover:text-flipfocus-300"
+        >Duplicates Scanner</a
+      >
+      and more privacy-first utilities
+    </p>
+  </div>
+</section>
