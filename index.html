@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Photo Organizer - Intelligent Photo & Video Organization
-description: Intelligent photo and video organization for Mac and Windows. Automatic sorting, duplicate detection, and EXIF-based organization. Privacy-first, offline processing.
+title: Photo Organizer - Organize Photos from Any Source
+description: Organize photos and videos from any source — iPhone, DSLR, or Google Photos Takeout — into a clean folder structure. Custom templates, duplicate detection, and EXIF-based sorting. Privacy-first, 100% offline.
 ---
 
 <!-- Hero Section -->
@@ -226,6 +226,20 @@ description: Intelligent photo and video organization for Mac and Windows. Autom
               stroke-linejoin="round"
               stroke-width="2"
               d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            />
+          </svg>
+          {% elsif feature.icon == 'cloud' %}
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
             />
           </svg>
           {% endif %}
@@ -781,9 +795,7 @@ description: Intelligent photo and video organization for Mac and Windows. Autom
         </button>
         <div class="faq-answer hidden px-6 pb-4">
           <p class="text-gray-600 leading-relaxed">
-            You can choose from various folder structures including date
-            (year/month/day) and device. The app provides these as preset
-            templates for common organization methods.
+            You can choose from preset folder structures (year, year/month, year/month/day, device) or build your own using the custom template builder. The template builder lets you combine variable pills — {year}, {month}, {day}, {device}, {sourceFolder} — with free text in any order. A live preview shows exactly how your files will be organized before you start.
           </p>
         </div>
       </div>
@@ -813,10 +825,7 @@ description: Intelligent photo and video organization for Mac and Windows. Autom
         </button>
         <div class="faq-answer hidden px-6 pb-4">
           <p class="text-gray-600 leading-relaxed">
-            Photo Organizer can still organize your files using file creation
-            dates. While EXIF data provides the most accurate organization, the
-            app has fallback methods to ensure all your photos can be properly
-            sorted and organized.
+            For photos without embedded EXIF (common with screenshots or older scans), the app can fall back to the file creation date, skip the file, or flag it for manual review — your choice. For Google Photos Takeout exports, capture date and device information are read automatically from the JSON sidecar files that Google includes, so most photos are correctly dated even without embedded EXIF.
           </p>
         </div>
       </div>
