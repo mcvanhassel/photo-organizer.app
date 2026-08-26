@@ -1,12 +1,12 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.9"
+gem "jekyll", "~> 4.3"
 gem "jekyll-sitemap"
 gem "jekyll-feed"
 gem "jekyll-seo-tag"
 gem "kramdown-parser-gfm"
 
-# Performance and development
+# Required for jekyll serve on Ruby 3+ (webrick was removed from stdlib in 3.0)
 gem "webrick", "~> 1.7"
 
 group :jekyll_plugins do
