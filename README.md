@@ -37,7 +37,8 @@ This is the official website for **Photo Organizer**, an intelligent desktop app
 ## 🛠️ Technology Stack
 
 - **Jekyll** - Static site generator
-- **Tailwind CSS** - Utility-first CSS framework
+- **Tailwind CSS v4** - Utility-first CSS framework
+- **pnpm** - Fast, disk-efficient package manager
 - **GitHub Pages** - Hosting platform
 - **Structured Data** - JSON-LD for rich snippets
 
@@ -80,13 +81,13 @@ The website is optimized for the following primary keywords:
 ### Setup
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Build CSS
-npm run build
+pnpm run build
 
 # Watch for changes
-npm run watch
+pnpm run watch
 ```
 
 ### Jekyll Development
@@ -124,7 +125,7 @@ bundle exec jekyll build
 
 ## 📄 License
 
-© 2025 Maurits van Hassel. All rights reserved.
+© 2026 Maurits van Hassel. All rights reserved.
 
 Part of the [FlipFocus](https://www.flipfocus.nl) family of privacy-first utility apps.
 
