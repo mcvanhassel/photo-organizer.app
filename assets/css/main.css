@@ -1,8 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+@config "../../tailwind.config.js";
 
 @layer base {
   html {
@@ -54,7 +54,7 @@
   }
 
   .prose-flipfocus {
-    @apply prose prose-lg prose-flipfocus-600 max-w-none;
+    @apply prose prose-lg max-w-none;
   }
 
   .hero-section {
